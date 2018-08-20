@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Posts.all.limit(10).includes(:photos)
+    @posts = Post.all.limit(10).includes(:photos)
   end
 
   def new
