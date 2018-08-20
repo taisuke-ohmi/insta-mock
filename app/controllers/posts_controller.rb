@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.all.limit(10).includes(:photos)
+    @posts = Post.all.limit(10).includes(:photos, :user).order('created_at DESC')
   end
 
   def new
