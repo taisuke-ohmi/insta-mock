@@ -8,26 +8,26 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
           <div class="form-group">
-            <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control my-input" %>
           </div>
 
           <div class="form-group">
-            <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control my-input" %>
           </div>
 
           <div class="actions">
-            <%= f.submit "ログインする", class: "btn btn-primary w-100" %>
+            <%= f.submit "ログインする", class: "btn btn-block g-button" %>
           </div>
         <% end %>
-
-        <br>
-
-      </div>
-      <div class="form-wrap">
-        <p class="text-center">
-          アカウントをお持ちでないですか？
-          <%= link_to "登録する", new_user_registration_path%>
-        </p>
+        <div class="col-md-12 ">
+           <div class="login-or">
+              <hr class="hr-or">
+              <span class="span-or">or</span>
+           </div>
+        </div>
+        <div class="form-group">
+          <%= link_to "登録する", new_user_registration_path, class: "btn btn-block send-button tx-tfm" %>
+        </div>
       </div>
     </div>
   </div>
